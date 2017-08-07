@@ -41,8 +41,8 @@ public class TCPServer {
 
         while (true){
             client = ss.accept();
-            System.out.println("Client " + ClientCount + "Connected");
-            executor.execute(new ClientThread(client));
+            System.out.println("Client " + ClientCount + " Connected");
+            executor.execute(new ClientThread(client, ClientCount));
             ClientCount++;
         }
     }

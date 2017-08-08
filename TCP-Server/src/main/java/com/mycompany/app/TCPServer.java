@@ -16,8 +16,7 @@ public class TCPServer {
     private static int port = 1234;
     public int ClientCount = 1;
 
-    public TCPServer(int startPoolSize, int newPort) {
-        port = newPort;
+    public TCPServer(int startPoolSize, int port) {
         final BlockingQueue<Runnable> queue = new ArrayBlockingQueue(queueSize);
         executor = new ThreadPoolExecutor(minimumPoolSize, startPoolSize, 0L, TimeUnit.MILLISECONDS, queue);
     }
